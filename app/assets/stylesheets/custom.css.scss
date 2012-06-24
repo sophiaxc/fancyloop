@@ -4,6 +4,8 @@ $navbarBackground: #fff;
 $navbarBackgroundHighlight: #fff;
 $navbarLinkColor: #999;
 $navbarLinkColorHover: #000;
+$navbarLinkColorActive: #000;
+$dropdownLinkColorHover: #000;
 
 @import "bootstrap";
 
@@ -72,6 +74,15 @@ p {
 
 
 /* header */
+
+.navbar .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret {
+  border-top-color: $grayLight;
+}
+
+.dropdown.open .dropdown-toggle {
+  color: black;
+}
+
 .nav.pull-right {
   padding-top: 25px;
   font-size: 1.7em;
