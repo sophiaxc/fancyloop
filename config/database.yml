@@ -19,7 +19,7 @@ test:
   encoding: utf8
   database: fancyloop_test
   pool: 5
-  username: user1
+  username: fancy_user
   password:
 
 production:
