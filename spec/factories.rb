@@ -8,4 +8,14 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :project do
+    title "Lorem ipsum"
+    user
+  end
+
+  factory :revision do
+    image File.open('./app/assets/images/sample_data/sample_image.png')
+    project
+  end
 end
