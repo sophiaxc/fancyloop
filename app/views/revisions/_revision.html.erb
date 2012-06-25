@@ -1,0 +1,12 @@
+<% if not revision.id.nil? %>
+<li>
+  <span class="title"><%= link_to revision.image_file_name, revision %></span>
+  <span class="timestamp">
+    Last updated <%= time_ago_in_words(revision.updated_at) %> ago.
+  </span>
+  <% if current_user?(revision.project.user) %>
+    <%= link_to "delete", revision, method: :delete,
+                                     data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
+<% end %>

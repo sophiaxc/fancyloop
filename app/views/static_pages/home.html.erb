@@ -1,8 +1,25 @@
 <% provide(:title, 'Home') %>
-<div class="center hero-unit">
-  <h1>FancyLoop</h1>
-  <h2>
-    Home page for FancyLoop. Fancy stuffs goes here.
-  </h2>
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if signed_in? %>
+  <div class="row">
+    <div class="span6 offset3">
+      <%= render 'shared/project_form' %>
+    </div>
+    <div class="span8">
+      <% if @projects and @projects.any? %>
+        <h3>Projects (<%= @projects.count %>)</h3>
+        <ol class="projects">
+          <%= render @projects %>
+        </ol>
+        <%= will_paginate @projects %>
+      <% end %>
+    </div>
+  </div>  
+<% else %>
+  <div class="center hero-unit">
+    <h1>FancyLoop</h1>
+    <h2>
+      Home page for FancyLoop. Fancy stuffs goes here.
+    </h2>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

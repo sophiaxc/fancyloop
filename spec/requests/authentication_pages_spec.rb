@@ -96,6 +96,19 @@ describe "Authentication" do
           it { should have_selector('title', text: 'Sign in') }
         end
       end
+
+      describe "in the Projects controller" do
+
+        describe "submitting to the create action" do
+          before { post projects_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete project_path(FactoryGirl.create(:project)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
     end
 
     describe "as wrong user" do

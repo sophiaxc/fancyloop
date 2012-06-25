@@ -13,5 +13,24 @@ namespace :db do
                    email: email,
                    password: password)
     end
+
+    users = User.all(limit: 5)
+
+    # Create projects
+    5.times do
+      title = Faker::Lorem.sentence(5)
+
+      users.each do |user|
+        user.projects.create!(title: title)
+      end
+    end
+
+    # Create revisions
+    4.times do |i|
+      image = File.open("./app/assets/images/sample_data/sample_v#{i+1}.png")
+      users.each do |user|
+        user.projects.first.revisions.create!(image: image)
+      end
+    end
   end
 end

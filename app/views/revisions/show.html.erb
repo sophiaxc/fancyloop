@@ -1,0 +1,10 @@
+<% provide(:title, full_title(@revision)) %>
+<div class="row">
+  <h1><%= full_title(@revision) %></h1>
+  <div class="span8">
+    <% if not @revision.caption.nil? and not @revision.caption.empty? %>
+      <h3><%= @revision.caption %></h3>
+    <% end %>
+    <%= image_tag @revision.image.url(:large) %>
+  </div>
+</div>

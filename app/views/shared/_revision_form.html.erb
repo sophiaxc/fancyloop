@@ -1,0 +1,9 @@
+<%= form_for(@revision) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.file_field :image %>
+    <%= f.text_area :caption, placeholder: "Describe your revision", rows: 2 %>
+    <%= f.hidden_field(:project_id) %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+<% end %>
