@@ -73,7 +73,7 @@ h3 {
   margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: #6D6D6D;
 }
 
 p {
@@ -243,17 +243,17 @@ textarea#project_title {
   margin: -20px 2px 25px;
   padding: 20px 10px 10px;
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-  background: #FEFEFE;
+  background: #F2F2F2;
   background-image: linear-gradient(45deg, #FFF, #F9F9F9);
 }
 
 .revision_form_container {
   width: 100%;
   display: inline-block;
-  margin: -40px 2px 25px;
+  margin: -45px 2px 25px;
   padding: 20px 10px 10px;
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-  background: #FEFEFE;
+  background: #F2F2F2;
   background-image: linear-gradient(45deg, #FFF, #F9F9F9);
 }
 
@@ -295,3 +295,7 @@ textarea#revision_caption {
   width: 40%;
 }
 
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+  color: black;
+  background-color: white;
+}
