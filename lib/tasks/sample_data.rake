@@ -18,7 +18,7 @@ namespace :db do
 
     # Create projects
     5.times do
-      title = Faker::Lorem.sentence(5)
+      title = Faker::Lorem.words(3)
 
       users.each do |user|
         user.projects.create!(title: title)
