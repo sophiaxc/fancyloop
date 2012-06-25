@@ -1,4 +1,5 @@
-<li>
+<div class="pin">
+  <%= link_to project_photo_for(project), project %>
   <span class="title"><%= link_to project.title, project %></span>
   <span class="timestamp">
     Last updated <%= time_ago_in_words(project.updated_at) %> ago.
@@ -8,4 +9,4 @@
                                      data: { confirm: "You sure?" },
                                      title: project.title %>
   <% end %>
-</li>
+</div>

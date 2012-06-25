@@ -142,6 +142,14 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+textarea#revision_caption {
+  width: 80%;
+}
+
+textarea#project_title {
+  width: 80%;
+}
+
 #error_explanation {
   color: #f00;
   ul {
@@ -178,7 +186,6 @@ input, textarea, select, .uneditable-input {
 
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
   }
 }
 .title {
@@ -186,4 +193,69 @@ input, textarea, select, .uneditable-input {
 }
 .timestamp {
   color: $grayLight;
+}
+
+.revision_timestamp {
+  display: block;
+  color: $grayLight;
+}
+
+.revision_text {
+  padding: 5px;
+}
+
+
+#columns {
+  padding-top: 20px;
+  -moz-column-count: 3;
+  -moz-column-gap: 10px;
+  -moz-column-fill: auto;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 10px;
+  -webkit-column-fill: auto;
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+}
+
+.pin {
+  -moz-column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  column-break-inside: avoid;
+  width: 250px;
+  display: inline-block;
+  margin: 0 2px 15px;
+  padding: 15px;
+  border: 2px solid #FAFAFA;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  background: #FEFEFE;
+  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+}
+
+.revision {
+  display: inline-block;
+  margin: 0 2px 15px;
+  padding: 0px;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  background: #FEFEFE;
+  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+}
+
+#revisions_container {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.file_upload {
+  -webkit-border-radius: 0px 3px 3px 0px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 0px 3px 3px 0px;
+  height: 20px;
+}
+
+input#revision_image {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
 }

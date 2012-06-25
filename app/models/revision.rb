@@ -15,8 +15,8 @@ class Revision < ActiveRecord::Base
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
     :styles => {
-      :large => "850x",
-      :thumb => "300x300",
+      :large => "850x4250>",
+      :thumb => "300x300>",
     },
     :path => "revisions/images/:id/:style/:hash.:extension",
     :hash_secret => ENV['FANCYLOOP_HASH'],

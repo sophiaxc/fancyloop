@@ -1,15 +1,15 @@
 <% provide(:title, 'Home') %>
 <% if signed_in? %>
   <div class="row">
-    <div class="span6 offset3">
+    <div class="span8 offset2">
       <%= render 'shared/project_form' %>
     </div>
-    <div class="span8">
+    <div class="span12">
       <% if @projects and @projects.any? %>
         <h3>Projects (<%= @projects.count %>)</h3>
-        <ol class="projects">
+        <div id="columns">
           <%= render @projects %>
-        </ol>
+        </div>
         <%= will_paginate @projects %>
       <% end %>
     </div>

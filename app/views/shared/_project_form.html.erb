@@ -1,7 +1,7 @@
 <%= form_for(@project) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :title, placeholder: "Project title...", rows: 2 %>
-  </div>
+    <%= f.text_area :title, placeholder: "Create a new project... (Enter project name)", rows: 1 %>
   <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+  </div>
 <% end %>

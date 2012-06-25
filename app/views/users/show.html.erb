@@ -1,12 +1,12 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <h1><%= @user.name %></h1>
-  <div class="span8">
+  <div class="span12">
     <% if @user.projects.any? %>
       <h3>Projects (<%= @user.projects.count %>)</h3>
-      <ol class="projects">
+      <div id="columns">
         <%= render @projects %>
-      </ol>
+      </div>
       <%= will_paginate @projects %>
     <% end %>
   </div>
