@@ -1,17 +1,19 @@
-<%= form_for(@revision) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <p>Add a new revision to your project.</p>
-    <%= f.file_field :image %>
-    <div class="input-append">
-       <input id="photoCover" placeholder="Select file" class="input-large" type="text">
-       <a class="btn btn-large file_upload" onclick="$('input[id=revision_image]').click();">Select File</a>
+<div class="revision_form_container center">
+  <%= form_for(@revision) do |f| %>
+    <h3>Add a new revision to <%= @revision.project.title %>.</h3>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.file_field :image %>
+      <div class="input-append">
+         <input id="photoCover" placeholder="Select revision file" class="input-large" type="text">
+         <a class="btn btn-large file_upload" onclick="$('input[id=revision_image]').click();">Select File</a>
+      </div>
+      <%= f.text_area :caption, placeholder: "Describe your revision (optional)", rows: 1 %>
+      <%= f.hidden_field(:project_id) %>
+      <%= f.submit "Create", class: "btn btn-large btn-primary" %>
     </div>
-    <%= f.text_area :caption, placeholder: "Describe your revision (optional)", rows: 1 %>
-    <%= f.hidden_field(:project_id) %>
-    <%= f.submit "Create", class: "btn btn-large btn-primary" %>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <script type="text/javascript">
   $('input[id=revision_image]').change(function() {

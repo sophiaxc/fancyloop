@@ -59,9 +59,18 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 2.3em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+h3 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
   color: $grayLight;
@@ -140,10 +149,6 @@ input, textarea, select, .uneditable-input {
   height: auto;
   margin-bottom: 15px;
   @include box_sizing;
-}
-
-textarea#revision_caption {
-  width: 80%;
 }
 
 textarea#project_title {
@@ -232,6 +237,26 @@ textarea#project_title {
   background-image: linear-gradient(45deg, #FFF, #F9F9F9);
 }
 
+.project_form_container {
+  width: 100%;
+  display: inline-block;
+  margin: -20px 2px 25px;
+  padding: 20px 10px 10px;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  background: #FEFEFE;
+  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+}
+
+.revision_form_container {
+  width: 100%;
+  display: inline-block;
+  margin: -40px 2px 25px;
+  padding: 20px 10px 10px;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  background: #FEFEFE;
+  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+}
+
 .revision {
   display: inline-block;
   margin: 0 2px 15px;
@@ -259,3 +284,14 @@ input#revision_image {
   top: -1000px;
   left: -1000px;
 }
+
+.input-append {
+  width: 40%;
+  float: left;
+  padding-left: 30px;
+}
+
+textarea#revision_caption {
+  width: 40%;
+}
+

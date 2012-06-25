@@ -1,10 +1,15 @@
 <% provide(:title, full_title(@revision)) %>
 <div class="row">
-  <h1><%= full_title(@revision) %></h1>
-  <div class="span8">
+  <h2>
+    <%= link_to @revision.project.title, @revision.project %>
+  </h2>
+  <h3>
+    Version <%= get_version(@revision) %>
     <% if not @revision.caption.nil? and not @revision.caption.empty? %>
-      <h3><%= @revision.caption %></h3>
+      | <%= @revision.caption %>
     <% end %>
-    <%= image_tag @revision.image.url(:large) %>
+  </h3>
+  <div class="span12 center">
+    <%= render @revision %>
   </div>
 </div>

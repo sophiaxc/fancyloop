@@ -7,7 +7,6 @@ class RevisionsController < ApplicationController
   end
 
   def destroy
-    flash[:success] = "Revision deleted!"
     @revision.destroy
     redirect_to @revision.project
   end
@@ -17,7 +16,6 @@ class RevisionsController < ApplicationController
     params[:revision].delete(:project_id)
     @revision = @project.revisions.build(params[:revision])
     if @revision.save
-      flash[:success] = "Revision added!"
       redirect_to @project
     else
       redirect_to @project

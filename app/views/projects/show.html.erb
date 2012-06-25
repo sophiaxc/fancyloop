@@ -1,14 +1,14 @@
 <% provide(:title, @project.title) %>
 <div class="row">
-  <h1><%= @project.title %></h1>
+  <h1></h1>
   <% if current_user?(@project.user) %>
-    <div class="span8 offset2">
+    <div class="span10 offset1">
       <%= render 'shared/revision_form' %>
     </div>
   <% end %>
   <div class="span12">
+      <h3><%= @project.title %> revisions (<%= @project.revisions.count %>)</h3>
     <% if @project.revisions.any? and @project.revisions.count > 0 %>
-      <h3>Revisions (<%= @project.revisions.count %>)</h3>
       <div id="revisions_container">
         <%= render @project.revisions %>
       </div>

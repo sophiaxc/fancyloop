@@ -1,7 +1,10 @@
-<%= form_for(@project) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :title, placeholder: "Create a new project... (Enter project name)", rows: 1 %>
-  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
-  </div>
-<% end %>
+<div class="span12 project_form_container center">
+  <%= form_for(@project) do |f| %>
+    <h3>Add a new project.</h3>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :title, placeholder: "Create a new project... (Enter project name)", rows: 1 %>
+    <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+    </div>
+  <% end %>
+</div>
