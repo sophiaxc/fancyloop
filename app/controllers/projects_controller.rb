@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(params[:project])
     if @project.save
-      flash[:success] = "Project created!"
       redirect_to @project
     else
       @projects = current_user.projects.paginate(page: params[:page])

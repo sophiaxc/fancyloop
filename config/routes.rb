@@ -3,6 +3,7 @@ Fancyloop::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :projects, only: [:create, :destroy, :show]
   resources :revisions, only: [:create, :destroy, :show]
+  resources :feedbacks, only: [:create, :destroy]
 
   root to: 'static_pages#home'
 

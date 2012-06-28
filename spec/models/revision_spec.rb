@@ -13,6 +13,7 @@ describe Revision do
 
   it { should respond_to(:project_id) }
   it { should respond_to(:image) }
+  it { should respond_to(:feedbacks) }
   it { should respond_to(:project) }
   its(:project) { should == project }
 

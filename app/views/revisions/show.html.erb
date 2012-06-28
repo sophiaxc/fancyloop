@@ -11,5 +11,10 @@
   </h3>
   <div class="span12 center">
     <%= render @revision %>
+    <% if @revision.feedbacks.any? and @revision.feedbacks.count > 0 %>
+      <div id="revisions_container">
+        <%= render @revision.feedbacks %>
+      </div>
+    <% end %>
   </div>
 </div>

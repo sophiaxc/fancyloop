@@ -18,7 +18,8 @@ namespace :db do
 
     # Create projects
     5.times do
-      title = Faker::Lorem.words(3)
+      title = ["Awesome project", "Sweet thang", "Next new doodle",
+               "Sleek mockups", "Super duper designs"].sample
 
       users.each do |user|
         user.projects.create!(title: title)
@@ -29,7 +30,8 @@ namespace :db do
     4.times do |i|
       image = File.open("./app/assets/images/sample_data/sample_v#{i+1}.png")
       users.each do |user|
-        user.projects.first.revisions.create!(image: image)
+        r = user.projects.first.revisions.create!(image: image)
+        r.feedbacks.create!(author: user.name, comment: "Some awesome feedback.")
       end
     end
   end

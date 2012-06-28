@@ -1,0 +1,10 @@
+<% if not feedback.id.nil? %>
+<div class="revision">
+  <div class="revision_text">
+    <p> <%= feedback.comment %> </p>
+    <span class="revision_timestamp">
+      - <%= feedback.author %>
+    </span>
+  </div>
+</div>
+<% end %>

@@ -4,6 +4,7 @@ class Revision < ActiveRecord::Base
   validates :caption, length: { maximum: 140 }
 
   belongs_to :project
+  has_many :feedbacks, dependent: :destroy
 
   default_scope order: 'revisions.created_at DESC'
 

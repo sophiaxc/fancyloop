@@ -18,4 +18,10 @@ FactoryGirl.define do
     image File.open('./app/assets/images/sample_data/sample_image.png')
     project
   end
+
+  factory :feedback do
+    comment "Looking awesome."
+    author "Brophia"
+    revision
+  end
 end
