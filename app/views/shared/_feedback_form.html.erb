@@ -1,0 +1,15 @@
+<div class="feedback_form_container center">
+  <%= form_for(@feedback) do |f| %>
+    <h3>Add a comment to <%= @revision.project.title %>.</h3>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :comment, placeholder: "Provide feedback for this revision", rows: 1 %>
+      <% if not current_user %>
+        <%= f.text_field :author, placeholder: "Your name" %>
+      <% end %>
+      <%= f.hidden_field(:revision_id) %>
+      <%= f.submit "Comment", class: "btn btn-large btn-primary" %>
+    </div>
+  <% end %>
+</div>
+</div>

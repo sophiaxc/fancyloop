@@ -5,6 +5,7 @@
       <%= link_to image_tag("logo.png", alt: "FancyLoop"), root_path, id: "logo" %>
         <ul class="nav pull-right">
           <% if signed_in? %>
+            <li><%= link_to "Home", root_path %></li>
             <% if current_user.admin? %>
             <li><%= link_to "Users", users_path %></li>
             <% end %>

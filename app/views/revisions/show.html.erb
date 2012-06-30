@@ -1,5 +1,8 @@
 <% provide(:title, full_title(@revision)) %>
 <div class="row">
+  <div class="span10 offset1">
+    <%= render 'shared/feedback_form' %>
+  </div>
   <h2>
     <%= link_to @revision.project.title, @revision.project %>
   </h2>

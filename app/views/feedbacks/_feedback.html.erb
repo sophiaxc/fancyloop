@@ -4,6 +4,11 @@
     <p> <%= feedback.comment %> </p>
     <span class="revision_timestamp">
       - <%= feedback.author %>
+    <% if current_user?(feedback.revision.project.user) %>
+      |
+      <%= link_to "delete", feedback, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
     </span>
   </div>
 </div>
