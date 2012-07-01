@@ -1,13 +1,22 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <h1><%= @user.name %></h1>
-  <div class="span12">
-    <% if @user.projects.any? %>
-      <h3>Projects (<%= @user.projects.count %>)</h3>
-      <div id="columns">
-        <%= render @projects %>
-      </div>
-      <%= will_paginate @projects %>
-    <% end %>
+<article class="header_row">
+  <div class="container center">
+    <h3 class="user_name_title"><%= @user.name %></h3>
   </div>
-</div>
+</article>
+<% if @user.projects.any? %>
+  <% @projects.each_with_index do |project, index| %>
+    <article class="<%= index.even? ? "even_row" : "odd_row" %>">
+      <%= render project %>
+    </article>
+  <% end %>
+  <div class="container center">
+    <%= will_paginate @projects %>
+  </div>
+<% else %>
+  <article class="even_row">
+  <div class="container center">
+    <h1 class="no_projects"><%= @user.name %> has no projects :(</h1>
+  </div>
+  </article>
+<% end %>

@@ -49,6 +49,10 @@ textarea {
   margin-bottom: 10px;
 }
 
+.top_padding {
+  padding-top: 20px;
+}
+
 
 /* typography */
 
@@ -57,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-weight: normal;
   font-family: "chaparral-pro",sans-serif;
   font-size: 3em;
   letter-spacing: -2px;
@@ -232,9 +237,17 @@ textarea#project_title {
   }
 }
 
+h3.user_name_title {
+  padding: 25px 0px 10px;
+  font-size: 60px;
+  font-weight: normal;
+  font-family: "chaparral-pro",sans-serif;
+  display: block;
+  color: white;
+}
+
 h3.project_form_title {
   margin-bottom: 10px;
-  text-align: center;
   font-size: 40px;
   font-weight: normal;
   font-family: "chaparral-pro",sans-serif;
@@ -247,7 +260,6 @@ h1.no_projects {
   margin-bottom: 10px;
   text-align: center;
   font-size: 60px;
-  font-weight: normal;
   display: block;
 }
 
@@ -255,7 +267,6 @@ h1.title {
   margin-bottom: 10px;
   text-align: center;
   font-size: 60px;
-  font-weight: normal;
   display: block;
   a {
     color: #555;
@@ -279,7 +290,7 @@ h1.title {
   padding: 5px;
 }
 
-.project_form_row {
+.header_row {
   background: $projectFormRowColor;
 }
 
