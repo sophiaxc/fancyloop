@@ -20,7 +20,8 @@ describe Feedback do
   image = File.open('./app/assets/images/sample_data/sample_image.png')
   let(:revision) { project.revisions.create!(image: image) }
   before do
-    @feedback = revision.feedbacks.build(comment: "Sick design")
+    @feedback = revision.feedbacks.build(comment: "Sick design",
+                                         author: "Awesome dude.")
   end
 
   subject { @feedback }

@@ -64,7 +64,7 @@ describe "User pages" do
 
     before { visit user_path(user) }
 
-    it { should have_selector('h1',    text: user.name) }
+    it { should have_selector('h3',    text: user.name) }
     it { should have_selector('title', text: user.name) }
 
     describe "projects" do
@@ -99,7 +99,7 @@ describe "User pages" do
 
         it { should have_selector('title', text: user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-        it { should have_link('Sign out') }
+        it { should have_link('sign out') }
       end
     end
   end
@@ -134,7 +134,7 @@ describe "User pages" do
 
       it { should have_selector('title', text: new_name) }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('sign out', href: signout_path) }
       specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end
