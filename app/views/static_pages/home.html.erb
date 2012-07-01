@@ -1,25 +1,31 @@
 <% provide(:title, 'Home') %>
 <% if signed_in? %>
-  <div class="row">
-    <div class="span8 offset2">
-      <%= render 'shared/project_form' %>
-    </div>
-    <div class="span12">
-      <% if @projects and @projects.any? %>
-        <h3>Projects (<%= @projects.count %>)</h3>
-        <div id="columns">
-          <%= render @projects %>
-        </div>
-        <%= will_paginate @projects %>
+    <%= render 'shared/project_form' %>
+    <% if @projects and @projects.any? %>
+      <% @projects.each_with_index do |project, index| %>
+        <article class="<%= index.even? ? "even_row" : "odd_row" %>">
+          <%= render project %>
+        </article>
       <% end %>
-    </div>
-  </div>  
+      <div class="container center">
+        <%= will_paginate @projects %>
+      </div>
+    <% else %>
+      <article class="even_row">
+      <div class="container center">
+        <h1 class="no_projects">You have no projects. Make some!</h1>
+      </div>
+      </article>
+
+    <% end %>
 <% else %>
-  <div class="center hero-unit">
-    <h1>FancyLoop</h1>
-    <h2>
-      Home page for FancyLoop. Fancy stuffs goes here.
-    </h2>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <div class="container">
+    <div class="center hero-unit">
+      <h1>FancyLoop</h1>
+      <h2>
+        Home page for FancyLoop. Fancy stuffs goes here.
+      </h2>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+    </div>
   </div>
 <% end %>

@@ -11,6 +11,10 @@ $dropdownLinkColorHover: #000;
 
 /* mixins, variables, etc. */
 $grayMediumLight: #eaeaea;
+$projectFormRowColor: rgba(black, 0.5);
+$oddRowColor: rgba(black, 0.05);
+$evenRowColor: rgba(black, 0.025);
+$dropShadowColor: rgba(black, 0.1);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -25,7 +29,8 @@ html {
 }
 
 body {
-  padding-top: 100px;
+  padding-top: 80px;
+  font-family: "freight-sans-pro",sans-serif;
 }
 
 section {
@@ -52,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-family: "chaparral-pro",sans-serif;
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
@@ -77,9 +83,17 @@ h3 {
 }
 
 p {
-  font-size: 1.1em;
+  font-family: "freight-sans-pro",sans-serif;
+  font-size: 1.5em;
   line-height: 1.7em;
+  color: #222;
 }
+
+p.no_revisions {
+  color: $grayLight;
+  font-size: 30px;
+}
+
 
 
 /* header */
@@ -185,6 +199,30 @@ textarea#project_title {
 
 /* projects */
 
+.project {
+  width: 100%;
+  display: inline-block;
+  margin: 0px;
+  padding: 50px 0px;
+}
+
+.revision_photo {
+  -moz-column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  column-break-inside: avoid;
+  width: 300px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -moz-box-shadow:    0px 2px 4px 2px $dropShadowColor;
+  -webkit-box-shadow: 0px 2px 4px 1px $dropShadowColor;
+  box-shadow:         0px 2px 4px 1px $dropShadowColor;
+  margin: 3px;
+  background: white;
+}
+
 .projects {
   list-style: none;
   margin: 10px 0 0 0;
@@ -193,9 +231,41 @@ textarea#project_title {
     padding: 10px 0;
   }
 }
-.title {
+
+h3.project_form_title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: "chaparral-pro",sans-serif;
+  display: block;
+  color: white;
+}
+
+h1.no_projects {
+  padding: 250px 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: normal;
   display: block;
 }
+
+h1.title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: normal;
+  display: block;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+      text-decoration: none;
+    }
+  }
+}
+
 .timestamp {
   color: $grayLight;
 }
@@ -209,42 +279,28 @@ textarea#project_title {
   padding: 5px;
 }
 
-
-#columns {
-  padding-top: 20px;
-  -moz-column-count: 3;
-  -moz-column-gap: 10px;
-  -moz-column-fill: auto;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 10px;
-  -webkit-column-fill: auto;
-  column-count: 3;
-  column-gap: 15px;
-  column-fill: auto;
+.project_form_row {
+  background: $projectFormRowColor;
 }
 
-.pin {
-  -moz-column-break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  column-break-inside: avoid;
-  width: 250px;
-  display: inline-block;
-  margin: 0 2px 15px;
-  padding: 15px;
-  border: 2px solid #FAFAFA;
-  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-  background: #FEFEFE;
-  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+.even_row {
+  background: $evenRowColor;
+}
+
+.odd_row {
+  background: $oddRowColor;
+}
+
+.button_project {
+  color: $projectFormRowColor;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .project_form_container {
   width: 100%;
   display: inline-block;
-  margin: -20px 2px 25px;
-  padding: 20px 10px 10px;
-  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-  background: #F2F2F2;
-  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+  padding: 30px 10px 10px;
 }
 
 .feedback_form_container {
@@ -308,4 +364,17 @@ textarea#revision_caption {
 .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
   color: black;
   background-color: white;
+}
+
+
+.columns {
+  -moz-column-count: 3;
+  -moz-column-gap: 5px;
+  -moz-column-fill: auto;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 5px;
+  -webkit-column-fill: auto;
+  column-count: 3;
+  column-gap: 5px;
+  column-fill: auto;
 }

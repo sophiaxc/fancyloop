@@ -10,9 +10,10 @@ module RevisionsHelper
     version = revisions.length - hash[revision]
    end
 
-  def revision_photo_for(revision, options = { size: :thumb})
+  def revision_photo_for(revision, options = { size: :thumb,
+                                               class: "revision_photo" })
     size = options[:size]
     image = revision.image.url(size)
-    image_tag(image, alt: revision.project.title, class: "revision_photo")
+    image_tag(image, alt: revision.project.title, class: options[:class])
   end
 end

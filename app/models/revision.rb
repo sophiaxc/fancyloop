@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: revisions
+#
+#  id                 :integer         not null, primary key
+#  project_id         :integer
+#  created_at         :datetime        not null
+#  updated_at         :datetime        not null
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  caption            :string(255)
+#
+
 class Revision < ActiveRecord::Base
   attr_accessible :image, :caption
   validates :project_id, presence: true
@@ -17,7 +32,7 @@ class Revision < ActiveRecord::Base
     },
     :styles => {
       :large => "850x4250>",
-      :thumb => "300x300>",
+      :thumb => "300x",
     },
     :path => "revisions/images/:id/:style/:hash.:extension",
     :hash_secret => ENV['FANCYLOOP_HASH'],

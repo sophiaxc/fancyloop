@@ -1,12 +1,24 @@
-<div class="pin">
-  <%= link_to project_photo_for(project), project %>
-  <span class="title"><%= link_to project.title, project %></span>
-  <span class="timestamp">
-    Last updated <%= time_ago_in_words(project.updated_at) %> ago.
-  </span>
-  <% if current_user?(project.user) %>
-    <%= link_to "delete", project, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: project.title %>
-  <% end %>
+<div class="container">
+  <div class="project">
+      <h1 class="title"><%= link_to wrap_long_string(project.title), project %></h1>
+      <% if project.revisions.any? %>
+        <div class="columns">
+          <% project.revisions.each do |revision| %>
+            <%= link_to revision_photo_for(revision), revision %>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="no_revisions center">
+          No revisions have been uploaded for this project yet.
+        </p>
+      <% end %>
+      <div class="timestamp center">
+        Last updated <%= time_ago_in_words(project.updated_at) %> ago
+        <% if current_user?(project.user) %>
+          | <%= link_to "delete", project, method: :delete,
+                                           data: { confirm: "You sure?" },
+                                           title: project.title %>
+        <% end %>
+      </div>
+    </div>
 </div>
