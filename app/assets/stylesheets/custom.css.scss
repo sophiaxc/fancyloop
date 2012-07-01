@@ -246,7 +246,7 @@ h3.user_name_title {
   color: white;
 }
 
-h3.project_form_title {
+h3.form_title {
   margin-bottom: 10px;
   font-size: 40px;
   font-weight: normal;
@@ -362,14 +362,18 @@ input#revision_image {
   left: -1000px;
 }
 
+.input-large {
+  width: 283px;
+}
+
 .input-append {
   width: 40%;
   float: left;
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 textarea#revision_caption {
-  width: 40%;
+  width: 45%;
 }
 
 .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {

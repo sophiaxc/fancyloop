@@ -2,7 +2,7 @@
 <div class="container center">
   <div class="project_form_container">
     <%= form_for(@project) do |f| %>
-      <h3 class="project_form_title">Add a new project.</h3>
+      <h3 class="form_title">Add a new project.</h3>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="field">
         <%= f.text_area :title, placeholder: "Enter new project name...", rows: 1 %>
