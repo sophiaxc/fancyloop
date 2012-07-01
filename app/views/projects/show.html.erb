@@ -1,12 +1,29 @@
 <% provide(:title, @project.title) %>
   <% if current_user?(@project.user) %>
       <%= render 'shared/revision_form' %>
-  <% end %>
-  <div class="span12">
-      <h3><%= @project.title %> revisions (<%= @project.revisions.count %>)</h3>
-    <% if @project.revisions.any? and @project.revisions.count > 0 %>
-      <div id="revisions_container">
-        <%= render @project.revisions %>
+  <% else %>
+    <article class="header_row">
+      <div class="container center">
+        <h3 class="header_row_title"><%= @project.title %></h3>
       </div>
+    </article>
+  <% end %>
+    <% if @project.revisions.any? and @project.revisions.count > 0 %>
+      <% @project.revisions.each_with_index do |revision, index| %>
+        <article class="<%= index.even? ? "even_row" : "odd_row" %>">
+          <%= render revision %>
+        </article>
+      <% end %>
+    <% else %>
+      <article class="even_row">
+      <div class="container center">
+        <h1 class="no_projects">
+          <% if current_user?(@project.user) %>
+              You have no revisions for this project. Add some!
+          <% else %>
+              There are no revisions for this project :(
+          <% end %>
+        </h1>
+      </div>
+      </article>
     <% end %>
-  </div>

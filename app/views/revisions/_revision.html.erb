@@ -1,15 +1,17 @@
 <% if not revision.id.nil? %>
-<div class="revision">
-  <%= link_to revision_photo_for(revision, size: :large), revision %>
-  <div class="revision_text">
-    <span class="revision_timestamp">
-      Version <%= get_version(revision) %> updated <%= time_ago_in_words(revision.updated_at) %> ago.
-    <% if current_user?(revision.project.user) %>
-      |
-      <%= link_to "delete", revision, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-    <% end %>
-    </span>
+<div class="container">
+<div class="project">
+  <%= link_to revision_photo_for(
+    revision, { size: :large, class: "revision_photo_large" }),
+    revision %>
+  <div class="timestamp center">
+    Version <%= get_version(revision) %> updated <%= time_ago_in_words(revision.updated_at) %> ago.
+  <% if current_user?(revision.project.user) %>
+    |
+    <%= link_to "delete", revision, method: :delete,
+                                     data: { confirm: "You sure?" } %>
+  <% end %>
   </div>
+</div>
 </div>
 <% end %>
