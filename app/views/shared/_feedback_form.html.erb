@@ -1,15 +1,20 @@
-<div class="feedback_form_container center">
-  <%= form_for(@feedback) do |f| %>
-    <h3>Add a comment to <%= @revision.project.title %>.</h3>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-      <%= f.text_area :comment, placeholder: "Provide feedback for this revision", rows: 1 %>
-      <% if not current_user %>
-        <%= f.text_field :author, placeholder: "Your name" %>
+<article class="header_row">
+  <div class="container center">
+    <div class="project_form_container">
+      <h3 class="form_title">
+        Add a comment to <%= link_to @revision.project.title, @revision.project %> | Version <%= get_version(@revision) %>
+      </h3>
+      <%= form_for(@feedback) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+          <%= f.text_area :comment, placeholder: "Provide feedback for this revision", rows: 1 %>
+          <% if not current_user %>
+            <%= f.text_field :author, placeholder: "Your name" %>
+          <% end %>
+          <%= f.hidden_field(:revision_id) %>
+          <%= f.submit "Comment", class: "btn btn-large button_project" %>
+        </div>
       <% end %>
-      <%= f.hidden_field(:revision_id) %>
-      <%= f.submit "Comment", class: "btn btn-large btn-primary" %>
     </div>
-  <% end %>
-</div>
-</div>
+  </div>
+</article>

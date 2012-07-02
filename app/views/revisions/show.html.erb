@@ -1,19 +1,8 @@
 <% provide(:title, full_title(@revision)) %>
-<div class="row">
-  <div class="span10 offset1">
-    <%= render 'shared/feedback_form' %>
-  </div>
-  <h2>
-    <%= link_to @revision.project.title, @revision.project %>
-  </h2>
-  <h3>
-    Version <%= get_version(@revision) %>
-    <% if not @revision.caption.nil? and not @revision.caption.empty? %>
-      | <%= @revision.caption %>
-    <% end %>
-  </h3>
-  <div class="span12 center">
-    <%= render @revision %>
+<%= render 'shared/feedback_form' %>
+<article class="even_row">
+  <%= render @revision %>
+</article>
     <% if @revision.feedbacks.any? and @revision.feedbacks.count > 0 %>
       <div id="revisions_container">
         <%= render @revision.feedbacks %>
