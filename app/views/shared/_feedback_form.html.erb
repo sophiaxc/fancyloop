@@ -8,11 +8,11 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="field">
           <% if not current_user %>
-            <%= f.text_area :comment, class: "short_comment",
+            <%= f.text_field :comment, class: "short_comment",
               placeholder: "Provide feedback for this revision", rows: 1 %>
             <%= f.text_field :author, placeholder: "Your name (required)" %>
           <% else %>
-            <%= f.text_area :comment, class: "long_comment",
+            <%= f.text_field :comment, class: "long_comment",
               placeholder: "Provide feedback for this revision", rows: 1 %>
           <% end %>
           <%= f.hidden_field(:revision_id) %>

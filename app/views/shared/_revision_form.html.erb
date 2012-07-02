@@ -10,7 +10,7 @@
          <input id="photoCover" placeholder="Select revision file to upload (required)" class="input-large" type="text">
          <a class="btn btn-large file_upload" onclick="$('input[id=revision_image]').click();">Select File</a>
       </div>
-      <%= f.text_area :caption, placeholder: "Describe your revision (optional)", rows: 1 %>
+      <%= f.text_field :caption, placeholder: "Describe your revision (optional)", rows: 1 %>
       <%= f.hidden_field(:project_id) %>
       <%= f.submit "Create", class: "btn btn-large button_project" %>
     </div>
