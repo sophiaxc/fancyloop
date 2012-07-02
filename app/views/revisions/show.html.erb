@@ -1,5 +1,16 @@
 <% provide(:title, full_title(@revision)) %>
-<%= render 'shared/feedback_form' %>
+  <% if signed_in? %>
+    <%= render 'shared/feedback_form' %>
+  <% else %>
+    <article class="header_row">
+      <div class="container top_padding bottom_padding center">
+        <h3 class="header_row_title">
+          Sign up to provide feedback!
+        </h3>
+        <%= render 'shared/signup_form' %>
+      </div>
+    </article>
+  <% end %>
 <article class="even_row">
   <%= render @revision %>
 </article>
@@ -10,8 +21,12 @@
             <%= render @revision.feedbacks %>
           <% else %>
             <p class="no_feedback center">
+              <% if signed_in? %>
               No feedback has been provided for this revision.
               <br> Try sharing this revision with your friends.
+              <% else %>
+                Sign in to add some feedback!
+              <% end %>
             </p>
           <% end %>
       </div>

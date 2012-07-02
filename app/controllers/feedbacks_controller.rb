@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  before_filter :signed_in_user, only: [:destroy]
+  before_filter :signed_in_user, only: [:destroy, :create]
   before_filter :correct_user,   only: [:destroy]
 
   def destroy
