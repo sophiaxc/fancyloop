@@ -1,23 +1,18 @@
 <% provide(:title, "Edit user") %> 
-<div class="container top_padding">
-  <h1>Update your profile</h1>
+<article class="header_row">
+  <div class="container fat_padding center">
+    <h3 class="header_row_title">
+      Update your profile
+    </h3>
 
-  <div class="row">
-    <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.label :name %>
         <%= f.text_field :name %>
-
-        <%= f.label :email %>
         <%= f.text_field :email %>
+        <%= f.password_field :password, placeholder: "New password" %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-
-        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Save changes", class: "btn btn-large button_project" %>
       <% end %>
-    </div>
   </div>
-</div>
+</article>
