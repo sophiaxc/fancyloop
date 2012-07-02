@@ -1,21 +1,6 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
+<article class="header_row">
+  <div class="container fat_padding center">
+      <%= render 'shared/signup_form' %>
   </div>
-</div>
+</article>

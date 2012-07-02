@@ -1,0 +1,12 @@
+<h3 class="header_row_title">
+  Sign up and join the part-ay!
+</h3>
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.text_field :name, placeholder: "1. Your Name" %>
+  <%= f.text_field :email, placeholder: "2. Your Email" %>
+  <%= f.password_field :password, placeholder: "3. Password (at least 6 characters)" %>
+
+  <%= f.submit "Sign Up", class: "btn btn-large button_project" %>
+<% end %>

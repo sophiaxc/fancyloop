@@ -205,6 +205,21 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+input#user_password {
+  margin-right: 5px;
+  width: 25%;
+}
+
+input#user_email {
+  margin-right: 5px;
+  width: 30%;
+}
+
+input#user_name {
+  margin-right: 5px;
+  width: 20%;
+}
+
 input#session_password {
   margin-right: 5px;
   width: 40%;
