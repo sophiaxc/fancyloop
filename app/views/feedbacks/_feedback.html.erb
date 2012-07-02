@@ -1,9 +1,8 @@
 <% if not feedback.id.nil? %>
-<div class="revision">
   <div class="revision_text">
     <p> <%= feedback.comment %> </p>
     <span class="revision_timestamp">
-      - <%= feedback.author %>
+      - <%= feedback.author %>, <%= time_ago_in_words(feedback.updated_at) %> ago
     <% if current_user?(feedback.revision.project.user) %>
       |
       <%= link_to "delete", feedback, method: :delete,
@@ -11,5 +10,4 @@
     <% end %>
     </span>
   </div>
-</div>
 <% end %>

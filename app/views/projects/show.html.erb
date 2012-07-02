@@ -4,7 +4,9 @@
   <% else %>
     <article class="header_row">
       <div class="container center">
-        <h3 class="header_row_title"><%= @project.title %></h3>
+        <h3 class="header_row_title">
+          <%= @project.title %> | <%= link_to @project.user.name, @project.user %>
+        </h3>
       </div>
     </article>
   <% end %>

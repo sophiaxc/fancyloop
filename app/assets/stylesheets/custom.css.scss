@@ -17,11 +17,21 @@ $evenRowColor: rgba(black, 0.025);
 $dropShadowColor: rgba(black, 0.1);
 $lightLinkColor: #CCE8FF;
 $lightLinkColorHover: #B0DFFF;
+$commentBlockColor: rgba(white, 0.97);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+@mixin round_shadow_box {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -moz-box-shadow:    0px 2px 4px 2px $dropShadowColor;
+  -webkit-box-shadow: 0px 2px 4px 1px $dropShadowColor;
+  box-shadow:         0px 2px 4px 1px $dropShadowColor;
 }
 
 /* universal */
@@ -53,6 +63,10 @@ textarea {
 
 .top_padding {
   padding-top: 20px;
+}
+
+.bottom_padding {
+  padding-bottom: 20px;
 }
 
 
@@ -94,6 +108,11 @@ p {
   font-size: 1.5em;
   line-height: 1.7em;
   color: #222;
+}
+
+p.no_feedback {
+  color: $grayMediumLight;
+  font-size: 30px;
 }
 
 p.no_revisions {
@@ -219,13 +238,30 @@ textarea#project_title {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -moz-box-shadow:    0px 2px 4px 2px $dropShadowColor;
-  -webkit-box-shadow: 0px 2px 4px 1px $dropShadowColor;
-  box-shadow:         0px 2px 4px 1px $dropShadowColor;
   background: white;
+  @include round_shadow_box;
+}
+
+.revision_text {
+  -moz-column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  column-break-inside: avoid;
+  font-family: "chaparral-pro",sans-serif;
+  p {
+    word-wrap: break-word;
+    line-height: 1.2em;
+    text-align: left;
+    margin-bottom: 5px;
+    font-family: "chaparral-pro",sans-serif;
+    color: #555;
+  }
+  padding: 10px;
+  width: 280px;
+  display: inline-block;
+  overflow: hidden;
+  margin: 5px 3px;
+  background: $commentBlockColor;
+  @include round_shadow_box;
 }
 
 .revision_photo {
@@ -235,14 +271,9 @@ textarea#project_title {
   width: 300px;
   display: inline-block;
   overflow: hidden;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -moz-box-shadow:    0px 2px 4px 2px $dropShadowColor;
-  -webkit-box-shadow: 0px 2px 4px 1px $dropShadowColor;
-  box-shadow:         0px 2px 4px 1px $dropShadowColor;
   margin: 3px;
   background: white;
+  @include round_shadow_box;
 }
 
 .projects {
@@ -254,6 +285,10 @@ textarea#project_title {
   }
 }
 
+.feedback_row {
+  padding: 50px 0px;
+}
+
 h3.header_row_title {
   padding: 25px 0px 10px;
   font-size: 60px;
@@ -261,6 +296,13 @@ h3.header_row_title {
   font-family: "chaparral-pro",sans-serif;
   display: block;
   color: white;
+  a {
+    color: $lightLinkColor;
+    &:hover {
+      color: $lightLinkColorHover;
+      text-decoration: none;
+    }
+  }
 }
 
 h3.form_title {
@@ -310,10 +352,6 @@ h1.title {
   color: $grayLight;
 }
 
-.revision_text {
-  padding: 5px;
-}
-
 .header_row {
   background: $projectFormRowColor;
 }
@@ -355,15 +393,6 @@ h1.title {
   padding: 20px 10px 10px;
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
   background: #F2F2F2;
-  background-image: linear-gradient(45deg, #FFF, #F9F9F9);
-}
-
-.revision {
-  display: inline-block;
-  margin: 0 2px 15px;
-  padding: 0px;
-  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-  background: #FEFEFE;
   background-image: linear-gradient(45deg, #FFF, #F9F9F9);
 }
 

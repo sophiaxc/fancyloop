@@ -3,10 +3,17 @@
 <article class="even_row">
   <%= render @revision %>
 </article>
-    <% if @revision.feedbacks.any? and @revision.feedbacks.count > 0 %>
-      <div id="revisions_container">
-        <%= render @revision.feedbacks %>
+    <article class="header_row">
+      <div class="container center feedback_row">
+        <h3 class="form_title"> Revision Feedback </h3>
+          <% if @revision.feedbacks.any? and @revision.feedbacks.count > 0 %>
+            <%= render @revision.feedbacks %>
+          <% else %>
+            <p class="no_feedback center">
+              No feedback has been provided for this revision.
+            </p>
+          <% end %>
       </div>
-    <% end %>
+    </article>
   </div>
 </div>
