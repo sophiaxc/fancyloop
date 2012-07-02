@@ -396,6 +396,18 @@ input#revision_image {
   padding-left: 20px;
 }
 
+input#feedback_author {
+  width: 20%;
+}
+
+textarea.short_comment {
+  width: 60%;
+}
+
+textarea.long_comment {
+  width: 80%;
+}
+
 textarea#revision_caption {
   width: 45%;
 }

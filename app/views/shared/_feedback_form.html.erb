@@ -7,9 +7,13 @@
       <%= form_for(@feedback) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="field">
-          <%= f.text_area :comment, placeholder: "Provide feedback for this revision", rows: 1 %>
           <% if not current_user %>
-            <%= f.text_field :author, placeholder: "Your name" %>
+            <%= f.text_area :comment, class: "short_comment",
+              placeholder: "Provide feedback for this revision", rows: 1 %>
+            <%= f.text_field :author, placeholder: "Your name (required)" %>
+          <% else %>
+            <%= f.text_area :comment, class: "long_comment",
+              placeholder: "Provide feedback for this revision", rows: 1 %>
           <% end %>
           <%= f.hidden_field(:revision_id) %>
           <%= f.submit "Comment", class: "btn btn-large button_project" %>
