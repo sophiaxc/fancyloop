@@ -110,6 +110,19 @@ p {
   color: #222;
 }
 
+p.about {
+  color: white;
+  font-size: 30px;
+  line-height: 1.4em;
+  a {
+    color: $lightLinkColor;
+    &:hover {
+      color: $lightLinkColorHover;
+      text-decoration: none;
+    }
+  }
+}
+
 p.no_feedback {
   color: $grayMediumLight;
   font-size: 30px;
