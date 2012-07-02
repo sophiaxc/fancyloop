@@ -1,21 +1,19 @@
 <% provide(:title, "Sign in") %>
-<div class="container top_padding">
-  <h1>Sign in</h1>
+<article class="header_row">
+  <div class="container fat_padding center">
+    <h3 class="header_row_title">
+      Login to FancyLoop. Yay!
+    </h3>
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
-  <div class="row">
-    <div class="span6 offset3">
-      <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.text_field :email, placeholder: "Email Address..." %>
+      <%= f.password_field :password, placeholder: "Password..." %>
 
-        <%= f.label :email %>
-        <%= f.text_field :email %>
+      <%= f.submit "Sign in", class: "btn btn-large button_project" %>
+    <% end %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-
-        <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-      <% end %>
-
-      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-    </div>
+    <p class="about center">
+      New user? <%= link_to "Sign up now!", signup_path %>
+    </p>
   </div>
-</div>
+</article>

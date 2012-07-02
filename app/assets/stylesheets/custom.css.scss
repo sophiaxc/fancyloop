@@ -205,6 +205,16 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+input#session_password {
+  margin-right: 5px;
+  width: 40%;
+}
+
+input#session_email {
+  margin-right: 5px;
+  width: 35%;
+}
+
 textarea#project_title {
   width: 80%;
 }
@@ -329,6 +339,10 @@ h3.form_title {
       text-decoration: none;
     }
   }
+}
+
+.fat_padding {
+  padding: 150px 0;
 }
 
 h1.no_projects {
