@@ -85,6 +85,14 @@ h1 {
   text-align: center;
 }
 
+h1.home_page {
+  color: $projectFormRowColor;
+  line-height: 1.3;
+  text-align: left;
+  font-size: 50px;
+}
+
+
 h2 {
   font-size: 2.3em;
   letter-spacing: -1px;
@@ -259,6 +267,18 @@ textarea#project_title {
 }
 
 /* projects */
+.doodle_example {
+  background-image: url('/assets/doodle_example.png');
+  height: 500px;
+  width: 500px;
+  float: left;
+}
+
+.right_shift {
+  margin-top: 80px;
+  width: 400px;
+  margin-left: 420px;
+}
 
 .project {
   width: 100%;
@@ -354,6 +374,10 @@ h3.form_title {
       text-decoration: none;
     }
   }
+}
+
+.average_padding {
+  padding: 50px 0;
 }
 
 .fat_padding {

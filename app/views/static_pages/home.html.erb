@@ -19,13 +19,19 @@
 
     <% end %>
 <% else %>
-  <div class="container">
-    <div class="center hero-unit">
-      <h1>FancyLoop</h1>
-      <h2>
-        Home page for FancyLoop. Fancy stuffs goes here.
-      </h2>
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+<article class="even_row">
+  <div class="container average_padding center">
+    <div class="doodle_example"></div>
+    <div class="right_shift">
+    <h1 class="home_page">
+      Get feedback on your designs as you iterate on them.
+    </h1>
     </div>
   </div>
+</article>
+<article class="header_row">
+  <div class="container top_padding bottom_padding center">
+      <%= render 'shared/signup_form' %>
+  </div>
+</article>
 <% end %>
