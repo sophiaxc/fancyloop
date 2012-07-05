@@ -3,7 +3,10 @@ class RevisionsController < ApplicationController
   before_filter :correct_user,   only: [:create, :destroy]
 
   def show
-    @user = User.new if not signed_in?
+    if not signed_in?
+      store_location
+      @user = User.new
+    end
     @revision = Revision.find(params[:id])
     @feedback = @revision.feedbacks.build
   end
