@@ -5,14 +5,14 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    it { should have_selector('h1', text: 'FancyLoop') }
+    it { should have_selector('h3', text: 'Sign up and join') }
     it { should have_selector('title',
                         :text => "FancyLoop | Home") }
   end
 
   describe "About page" do
     before { visit about_path }
-    it { should have_selector('h1', text: 'About FancyLoop') }
+    it { should have_selector('h3', text: 'About FancyLoop') }
     it { should have_selector('title',
                         :text => "FancyLoop | About") }
   end

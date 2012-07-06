@@ -53,7 +53,7 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1',    text: 'Sign up') }
+    it { should have_selector('h3',    text: 'Sign up') }
     it { should have_selector('title', text: 'FancyLoop | Sign up') }
   end
 
@@ -78,7 +78,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { "Sign Up" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -88,17 +88,16 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
+        fill_in "user_name",         with: "Example User"
+        fill_in "user_email",        with: "user@example.com"
+        fill_in "user_password",     with: "foobar"
       end
 
       describe "after saving the user" do
         before { click_button submit }
         let(:user) { User.find_by_email('user@example.com') }
 
-        it { should have_selector('title', text: user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_selector('title', text: 'Home') }
         it { should have_link('sign out') }
       end
     end
@@ -112,7 +111,7 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_selector('h1',    text: "Update your profile") }
+      it { should have_selector('h3',    text: "Update your profile") }
       it { should have_selector('title', text: "Edit user") }
     end
 
@@ -126,9 +125,9 @@ describe "User pages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name",             with: new_name
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
+        fill_in "user_name",             with: new_name
+        fill_in "user_email",            with: new_email
+        fill_in "user_password",         with: user.password
         click_button "Save changes"
       end
 
